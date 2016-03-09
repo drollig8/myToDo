@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		6E1A894F1C90080500E433B2 /* LocationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E1A894E1C90080500E433B2 /* LocationTests.swift */; };
+		6E1A89511C90445C00E433B2 /* APIClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E1A89501C90445C00E433B2 /* APIClientTests.swift */; };
+		6E1A89531C9044D200E433B2 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E1A89521C9044D200E433B2 /* APIClient.swift */; };
+		6E1A89551C9067A900E433B2 /* KeyChainAccessible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E1A89541C9067A900E433B2 /* KeyChainAccessible.swift */; };
 		6E541F281C8EA3F00086C6BE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E541F271C8EA3F00086C6BE /* AppDelegate.swift */; };
 		6E541F2A1C8EA3F00086C6BE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E541F291C8EA3F00086C6BE /* ViewController.swift */; };
 		6E541F2D1C8EA3F00086C6BE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E541F2B1C8EA3F00086C6BE /* Main.storyboard */; };
@@ -43,6 +46,9 @@
 
 /* Begin PBXFileReference section */
 		6E1A894E1C90080500E433B2 /* LocationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationTests.swift; sourceTree = "<group>"; };
+		6E1A89501C90445C00E433B2 /* APIClientTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = APIClientTests.swift; path = Model/APIClientTests.swift; sourceTree = "<group>"; };
+		6E1A89521C9044D200E433B2 /* APIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = APIClient.swift; path = Model/APIClient.swift; sourceTree = "<group>"; };
+		6E1A89541C9067A900E433B2 /* KeyChainAccessible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = KeyChainAccessible.swift; path = Model/KeyChainAccessible.swift; sourceTree = "<group>"; };
 		6E541F241C8EA3F00086C6BE /* myToDo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = myToDo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E541F271C8EA3F00086C6BE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6E541F291C8EA3F00086C6BE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -154,6 +160,8 @@
 				6E541F551C8EA93A0086C6BE /* ToDoItem.swift */,
 				6E541F591C8EB6C30086C6BE /* ItemManager.swift */,
 				6E541F4D1C8EA7E70086C6BE /* Location.swift */,
+				6E1A89521C9044D200E433B2 /* APIClient.swift */,
+				6E1A89541C9067A900E433B2 /* KeyChainAccessible.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -164,6 +172,7 @@
 				6E541F491C8EA4550086C6BE /* ToDoItemTests.swift */,
 				6E1A894E1C90080500E433B2 /* LocationTests.swift */,
 				6E541F5B1C8EB6D20086C6BE /* ItemManagerTests.swift */,
+				6E1A89501C90445C00E433B2 /* APIClientTests.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -298,9 +307,11 @@
 				6E541F691C8EE9A70086C6BE /* ItemCell.swift in Sources */,
 				6E541F2A1C8EA3F00086C6BE /* ViewController.swift in Sources */,
 				6E541F641C8EC0640086C6BE /* ItemListDataProvider.swift in Sources */,
+				6E1A89531C9044D200E433B2 /* APIClient.swift in Sources */,
 				6E541F5A1C8EB6C30086C6BE /* ItemManager.swift in Sources */,
 				6E541F561C8EA93A0086C6BE /* ToDoItem.swift in Sources */,
 				6E541F4E1C8EA7E70086C6BE /* Location.swift in Sources */,
+				6E1A89551C9067A900E433B2 /* KeyChainAccessible.swift in Sources */,
 				6E541F281C8EA3F00086C6BE /* AppDelegate.swift in Sources */,
 				6E541F621C8EBD990086C6BE /* ItemListViewController.swift in Sources */,
 			);
@@ -313,6 +324,7 @@
 				6E1A894F1C90080500E433B2 /* LocationTests.swift in Sources */,
 				6E541F601C8EBD890086C6BE /* ItemListViewControllerTests.swift in Sources */,
 				6E541F4A1C8EA4550086C6BE /* ToDoItemTests.swift in Sources */,
+				6E1A89511C90445C00E433B2 /* APIClientTests.swift in Sources */,
 				6E541F661C8EC33B0086C6BE /* ItemListDataProviderTests.swift in Sources */,
 				6EED82561C8F570000E90DFC /* ItemCellTests.swift in Sources */,
 				6E541F5C1C8EB6D20086C6BE /* ItemManagerTests.swift in Sources */,
