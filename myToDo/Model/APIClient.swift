@@ -41,6 +41,7 @@ class APIClient
         let task = session.dataTaskWithURL(url) { (data, response, error) -> Void in
             
             if error != nil {
+                // THIS WE TEST
                 completion(error: WebserviceError.ResponseError)
                 return
             }
