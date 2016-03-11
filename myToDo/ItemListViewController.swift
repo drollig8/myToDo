@@ -8,19 +8,34 @@
 
 import UIKit
 
+
 class ItemListViewController:UIViewController
 {
     @IBOutlet weak var tableView: UITableView!
-    var dataProvider: protocol<UITableViewDataSource, UITableViewDelegate>!
+    
+    // TODO statt dem Protocol Kram kann man einfach auch DataProvider scheiben.
+    var dataProvider: protocol<UITableViewDataSource, UITableViewDelegate, ItemManagerSettable>!
+    
+    var itemManager = ItemManager()
     
     override func viewDidLoad()
     {
         dataProvider = ItemListDataProvider()
         tableView.dataSource = dataProvider
         tableView.delegate = dataProvider
+        dataProvider.itemManager = itemManager
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        tableView.reloadData()
     }
     
     @IBAction func addItem(sender: UIBarButtonItem)
     {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let viewController = storyboard.instantiateViewControllerWithIdentifier("InputViewController") as! InputViewController
+        viewController.itemManager = self.itemManager
+        presentViewController(viewController, animated: true, completion: nil)
     }
 }

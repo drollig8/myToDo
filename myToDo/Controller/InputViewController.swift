@@ -57,11 +57,12 @@ class InputViewController: UIViewController
                 })
             }
         }
+        dismissViewControllerAnimated(true, completion: nil)
         
         
     }
-    @IBAction func cancel()
-    {
+    @IBAction func cancel() {
+        dismissViewControllerAnimated(true, completion: nil)
     }
     
     lazy var geocoder = CLGeocoder()  // dependency injection applies

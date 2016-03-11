@@ -11,17 +11,24 @@ import UIKit
 enum Section: Int {
     case Todo, Done
 }
-class ItemListDataProvider: NSObject, UITableViewDataSource, UITableViewDelegate
+
+@objc protocol ItemManagerSettable {
+    var itemManager: ItemManager? { get set }
+}
+
+let kItemSelectedNotification = "ItemSelectedNotification"
+
+// Warum muss hier das Settable rein und kann ihc nicht einfach DataProbider sagen ist so wie es ist....
+
+class ItemListDataProvider: NSObject, UITableViewDataSource, UITableViewDelegate, ItemManagerSettable
 {
     var itemManager:ItemManager?
     
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int
-    {
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 2
     }
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int
-    {
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         guard let itemManager = itemManager else {return 0}
         guard let itemSection = Section(rawValue: section) else {fatalError()}
         switch itemSection
@@ -32,8 +39,7 @@ class ItemListDataProvider: NSObject, UITableViewDataSource, UITableViewDelegate
         
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
-    {
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         guard let itemSection = Section(rawValue: indexPath.section) else {fatalError()}
         
@@ -68,8 +74,13 @@ class ItemListDataProvider: NSObject, UITableViewDataSource, UITableViewDelegate
         case .Todo: itemManager?.checkItemAtIndex(indexPath.row)
         case .Done: itemManager?.uncheckItemAtIndex(indexPath.row)
         }
-        
-        
-        
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        guard let itemSelection = Section(rawValue: indexPath.section) else {fatalError()}
+        switch itemSelection {
+        case .Todo: NSNotificationCenter.defaultCenter().postNotificationName(kItemSelectedNotification, object: nil, userInfo: ["index":indexPath.row])
+        case .Done: break
+        }
     }
 }

@@ -8,7 +8,7 @@
 
 import Foundation
 
-class ItemManager
+class ItemManager:NSObject
 {
     private var todoItems = [ToDoItem]()
     private var doneItems = [ToDoItem]()
