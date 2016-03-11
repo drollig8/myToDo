@@ -17,8 +17,8 @@ class DetailViewControllerTests: XCTestCase
     var tableView: UITableView!
     var controller: ItemListViewController!
     
-    override func setUp()
-    {
+    override func setUp() {
+        
         super.setUp()
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         sut = storyboard.instantiateViewControllerWithIdentifier("DetailViewController") as! DetailViewController
@@ -26,13 +26,16 @@ class DetailViewControllerTests: XCTestCase
 
     }
     
-    func test_HastTitleLabel()
-    {
+    override func tearDown() {
+        sut.itemInfo?.0.removeAll()
+        super.tearDown()
+    }
+    
+    func test_HastTitleLabel() {
         XCTAssertNotNil(sut.titleLabel)
     }
     
-    func testHasMapView()
-    {
+    func testHasMapView() {
         XCTAssertNotNil(sut.mapView)
     }
     

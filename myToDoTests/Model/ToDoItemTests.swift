@@ -7,6 +7,7 @@
 //
 
 import XCTest
+
 @testable import myToDo
 
 class ToDoItemTests: XCTestCase
@@ -83,12 +84,8 @@ class ToDoItemTests: XCTestCase
         XCTAssertEqual(item, recreatedItem)
     }
     
-    /*
-    func test_ToDoItemGetSerialized()
-    {
-        var itemManager: ItemManager? = ItemManager()
-    }
 
-    */
+
+    
 
 }

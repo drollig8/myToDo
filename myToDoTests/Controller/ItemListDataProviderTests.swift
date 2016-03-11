@@ -34,8 +34,9 @@ class ItemListDataProviderTests: XCTestCase
         
     }
     
-    override func tearDown()
-    {
+    override func tearDown() {
+        sut.itemManager?.removeAll()
+        sut.itemManager = nil
         super.tearDown()
     }
     

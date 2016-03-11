@@ -19,6 +19,10 @@ class InputViewController: UIViewController
     @IBOutlet weak var saveButton: UIButton!
     @IBOutlet weak var cancelButton: UIButton!
     
+    lazy var geocoder = CLGeocoder()  // dependency injection applies
+    
+    var itemManager: ItemManager?
+    
     lazy var dateFormatter: NSDateFormatter = {
         let dateFormatter = NSDateFormatter()
         dateFormatter.dateFormat = "MM/dd/yyyy"
@@ -65,6 +69,5 @@ class InputViewController: UIViewController
         dismissViewControllerAnimated(true, completion: nil)
     }
     
-    lazy var geocoder = CLGeocoder()  // dependency injection applies
-    var itemManager: ItemManager?
+
 }
